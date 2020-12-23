@@ -1,0 +1,14 @@
+<%- include('../header.ejs') -%> 
+<body>
+
+<h2>House Delete Page</h2>
+
+The house with id <%= id %> has been deleted: <%= success %>
+
+
+<% 
+if (success == false) {
+    %><br><br>Something went wrong! Try again later!
+    <%
+}
+%>

@@ -1,0 +1,39 @@
+<head>
+  <style>
+    body {  
+      background: linear-gradient(to left top, rgb(126, 64, 60), rgb(70, 11, 11)) fixed;
+      color: antiquewhite;
+      padding-top: 2em; 
+      padding-left: 2em;
+    }
+    body table {  
+      background-image: linear-gradient(rgb(206, 138, 138), rgb(226, 226, 179));
+      border-style: outset; 
+      border-width: 5px;
+    } 
+   
+    .navbar-light{
+      background:linear-gradient(gold,rgb(218, 201, 108));
+      border-style:groove;
+      border-color: rgb(255, 218, 5); 
+            border-width: 5px;
+    }
+    bg-light{
+      background: red;
+    }
+    button{
+      background:linear-gradient(gold,rgb(218, 201, 108));
+      border-style:groove;
+      border-color: rgb(255, 218, 5); 
+            border-width: 5px;
+    }
+  </style>
+</head>
+<h2>Add a new House!</h2>
+
+<%- include('editForm.ejs') -%> 
+
+// create a new Firestore Document
+let newHouse = await db.collection('houses').add({
+  address: req.body.address
+});
